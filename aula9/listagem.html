@@ -32,7 +32,7 @@
             let celnome = linha.insertCell();
             let celmarca = linha.insertCell();
             let celpreço = linha.insertCell();
-            let celimg = linha.insertCell();
+            let celImg = linha.insertCell();
 
             //coloca valores nas células
             celnome.innerHTML = nome;
@@ -41,11 +41,11 @@
 
             var imagem = document.createElement("img");
             imagem.setAttribute("src", img);
-            celimg.append(imagem);
+            celImg.append(imagem);
             }
 
             //fetch abre uma URL
-            fetch("http://makeup-api.herokuapp.com/api/v1/products.json")
+            fetch("http://makeup-api.herokuapp.com/api/v1/products.json ")
             .then($resposta => $resposta.json())
             .then($json => {
                 console.log($json);

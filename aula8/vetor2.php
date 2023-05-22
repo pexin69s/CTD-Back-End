@@ -4,11 +4,11 @@
         Exemplo:
         
         +------------+
-  nome  | Pexin      |
+  nome  | Ariel      |
         +------------+
   nota1 | 10         |
         +------------+
-  nota2 | 6          |
+  nota2 | 8          |
         +------------+
 
     </p>
@@ -17,9 +17,9 @@
     <?php
 
     $alunos = [
-        "nome" => "Pexin",
+        "nome" => "Ariel",
         "nota1" => 10,
-        "nota2" => 6,
+        "nota2" => 8,
     ];
 
     $alunos["notaTotal"] = ($alunos["nota1"] + $alunos["nota2"]);

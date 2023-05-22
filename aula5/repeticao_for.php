@@ -1,16 +1,35 @@
-<h2>Estrutura de repetiçaõ - for</h2>
-<p>
-    Utilizada para repetir um conjunto de instruções por um numero determado de vezes.
-</p>
-    <strong>Exemplo</strong>
-<pre>
-        for(inicio, condição, passo){
-            //comandos a serem repetidos.
-        }
-    </pre>
+<style>
+  .grid{
+     display: grid;
+     grid-template-rows: auto auto;
+     grid-template-columns: auto auto auto auto auto;
+     gap: 10px;
+  }
+</style>
 
-<?php
-    for($contador = 1; $contador < 10; $contador++){
-        echo "2 x $contador =  $contador  <br>";
+<h2>Estrutura de repetição - for</h2>
+<p>
+    Utilizada para repetir um conjunto de instruções por um
+    número determinado de vezes.
+</p>
+<strong>Exemplo</strong>
+<pre>
+    for(inicio, condição, passo){
+        //comandos a serem repetidos.
     }
-?>
+</pre>
+
+
+
+<div class="grid">
+    <?php
+        for($tabuada = 1; $tabuada <= 10; $tabuada++){
+            echo "<div class='tabuada'>";
+                for($contador = 0; $contador <= 10; $contador++){
+                    $resultado = $tabuada * $contador;
+                    echo "$tabuada x $contador = $resultado<br>";
+                }
+            echo "</div>";
+        }
+    ?>
+</div>

@@ -1,4 +1,4 @@
-<h2>Array - Vetor</h2>
+    <h2>Array - Vetor</h2>
 <p>
     Vetores são estruturas de dados unidimensionais "variáveis compostas", que permitem o armazenamento de mais de 1 valor.
     Para acessar os valores armazenados em um vetor é necessário informar o índice (key).
@@ -52,7 +52,7 @@
         $A = array(5,6,8);
         //como calcular a média de notas do vetor?
         $media = ($A[0] + $A[1] + $A[2]) / 3;
+        
         //imprimir a média
-
             echo $media
-    ?>
+    ?>   

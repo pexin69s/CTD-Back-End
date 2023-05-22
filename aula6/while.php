@@ -16,4 +16,10 @@
         echo "Olá pessoal $contador<br>";
         $contador++;
     }
+
+    //imprimir todos os valores de um vetor utilizando o foreach
+
+    foreach($alunos as $key => $value) {
+    echo "$value <br>";
+    }
 ?>
