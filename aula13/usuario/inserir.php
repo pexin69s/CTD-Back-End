@@ -9,7 +9,7 @@
      isset($_POST['senha'])){
 
       //faz o upload da foto do usuario
-      require_once "faz_uploud.php";
+      require_once "faz_upload.php";
 
    $nome = $_POST['nome'];
    $login = $_POST['login'];

@@ -6,7 +6,7 @@
    $id = $_POST['idnoticia'];
    $titulo = $_POST['titulo'];
    $materia = $_POST['materia'];
-   $categoria = $_POST ['categoria'];
+   $categoria = $_POST['categoria'];
 
    //cria uma variável com um comando SQL
    $SQL = "UPDATE `noticia` SET `titulo`= ?, `materia`= ?, `categoria`= ? WHERE  `idnoticia`= ? ;";
@@ -20,7 +20,7 @@
    //executa o comando
    $comando->execute();
 
-   //volta para o formulário aaaaaaa
+   //volta para o formulário
    header("Location: index.php");
 
    
