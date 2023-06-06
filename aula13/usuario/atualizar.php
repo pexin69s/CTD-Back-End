@@ -1,33 +1,19 @@
 <?php
-   
-   //importa o arquivo de conexão
-   require_once "../banco/conexao.php";
+require_once "../banco/conexao.php";
 
-   $id = $_POST['idusuario'];
-   $nome = $_POST['nome'];
-   $login = $_POST['login'];
-   $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+$nome = $_POST["n4"];
+$nome = $_POST["n1"];
+$login = $_POST["n2"];
+$senha = password_hash($_POST["n3"], PASSWORD_BCRYPT);
 
-   //cria uma variável com um comando SQL
-   $SQL = "UPDATE `usuario` SET `nome`= ?, `login`= ?, `senha`= ? WHERE  `idusuario`= ? ;";
- 
-   //prepara o comando para ser executado no mysql
-   $comando = $conexao->prepare($SQL);
+$sql = "UPDATE `usuario` SET `nome`=?, `login`=?, `senha`=? WHERE  `idusuario`=?;";
 
-   //faz a vinculação dos parâmetros ?, ?, ?
-   $comando->bind_param("sssi", $nome, $login, $senha, $id);
+echo $sql;
 
-   //executa o comando
-   $comando->execute();
+$comando = $conexao->prepare($sql);
 
-   //volta para o formulário
-   header("Location: index.php");
+$comando->bind_param("sssi", $nome , $login , $senha , $id); 
 
-   
+$comando->execute();
 
-
-
-
-
-
-
+header('location: index.php');

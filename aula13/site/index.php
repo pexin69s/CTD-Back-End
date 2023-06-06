@@ -1,31 +1,31 @@
-<?php
-    include_once "../noticia/consultar_todos.php";
-    include_once "../template/cabeçalho.php";
-    include_once "../template/menu.php";
+<?php 
+include_once  "../noticia/consultar_todos.php";
+include_once  "../template/cabecalho.php";
+include_once  "../template/menu.php";
+
+
+//include_once "menu.php";
 ?>
 
+  <!-- noticias -->
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-3">
 
-
-    
-        <!-- Noticias -->
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-3 g-3">
-
-        <?php foreach($noticias as $id => $noticia): ?>
-          <div class="card">
-              <img src="../uploads/<?php echo $noticia->foto; ?> "class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title"> <?php echo $noticia->titulo; ?></h5>
-                  
-                  <a href="ler.php?id=<?php echo $noticia->idnoticia?>" class="btn btn-primary"> Ler mais </a>
-                </div>
-          </div>
-        <?php endforeach; ?>
+    <?php foreach($noticias as $id => $noticia): ?>
+   <div class="col">
+  <div class="card" >
+  <img src=../uploads/<?php echo  $noticia->foto; ?> class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">"<?php echo  $noticia->titulo; ?>"</h5>
+    <a href="ler.php?id=<?php echo  $noticia->idnoticia; ?>" class="btn btn-primary">Ler mais</a>
   </div>
 </div>
-        
-        <!-- Fim Noticias -->
+    </div>
+<?php endforeach; ?>
+    
+</div>
 
-        <?php
-                include_once "../template/rodape.php";
-                ?>
+  </div>
+
+<!-- fim noticias -->
+<?php include_once  "../template/rodape.php"?>

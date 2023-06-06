@@ -1,33 +1,20 @@
 <?php
-   
-   //importa o arquivo de conexão
-   require_once "../banco/conexao.php";
+require_once "../banco/conexao.php";
+require_once "faz_upload.php";
+$id = $_POST['idnoticia'];
+$titulo = $_POST['titulo'];
+$materia = $_POST['materia'];
+$categoria = $_POST['categoria'];
+$foto = $nome_foto;
 
-   $id = $_POST['idnoticia'];
-   $titulo = $_POST['titulo'];
-   $materia = $_POST['materia'];
-   $categoria = $_POST['categoria'];
+$sql = "UPDATE `noticia` SET `titulo`=?, `materia`=?, `categoria`=?, foto=? WHERE  `idnoticia`=?;";
 
-   //cria uma variável com um comando SQL
-   $SQL = "UPDATE `noticia` SET `titulo`= ?, `materia`= ?, `categoria`= ? WHERE  `idnoticia`= ? ;";
- 
-   //prepara o comando para ser executado no mysql
-   $comando = $conexao->prepare($SQL);
+echo $sql;
 
-   //faz a vinculação dos parâmetros ?, ?, ?
-   $comando->bind_param("sssi", $titulo, $materia, $categoria, $id);
+$comando = $conexao->prepare($sql);
 
-   //executa o comando
-   $comando->execute();
+$comando->bind_param("ssssi", $titulo , $materia , $categoria ,$foto,  $id); 
 
-   //volta para o formulário
-   header("Location: index.php");
+$comando->execute();
 
-   
-
-
-
-
-
-
-
+header('location: index.php');

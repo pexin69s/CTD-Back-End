@@ -1,32 +1,21 @@
 <?php
-   
-   //importa o arquivo de conexão
-   require_once "../banco/conexao.php";
+require_once "../banco/conexao.php";
 
-   //verifica se o nome, login e senha foram enviado
-   //do formulário
-   if(isset($_POST['nome']) && isset($_POST['login']) &&
-     isset($_POST['senha'])){
+if(isset($_POST["n1"]) && isset($_POST["n2"]) && isset($_POST["n3"])){
+$nome = $_POST["n1"];
+$login = $_POST["n2"];
+$senha = password_hash($_POST["n3"], PASSWORD_BCRYPT);
 
-      //faz o upload da foto do usuario
-      require_once "faz_upload.php";
+require_once "faz_upload.php";
+$sql = "INSERT INTO `usuario` (`nome`, `login`, `senha`, foto) VALUES (?, ?, ?, ?);";
 
-   $nome = $_POST['nome'];
-   $login = $_POST['login'];
-   $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);
+echo $sql;
 
-   //cria uma variável com um comando SQL
-   $SQL = "INSERT INTO `usuario` (`nome`, `login`, `senha`, foto) VALUES (?, ?, ?, ?);";
- 
-   //prepara o comando para ser executado no mysql
-   $comando = $conexao->prepare($SQL);
+$comando = $conexao->prepare($sql);
 
-   //faz a vinculação dos parâmetros ?, ?, ?
-   $comando->bind_param("ssss", $nome, $login, $senha, $nome_foto);
+$comando->bind_param("ssss", $nome , $login , $senha, $nome_foto); 
 
-   //executa o comando
-   $comando->execute();
+$comando->execute();
 
 }
-   //volta para o formulário
-   header("Location: index.php");
+header('location: index.php');

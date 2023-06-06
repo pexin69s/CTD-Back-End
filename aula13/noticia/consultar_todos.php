@@ -1,35 +1,15 @@
 <?php
-   
-   //importa o arquivo de conexão
-   require_once "../banco/conexao.php";
+require_once "../banco/conexao.php";
 
 
-   //cria uma variável com um comando SQL
-   $SQL = "SELECT * FROM noticia";
- 
-   //prepara o comando para ser executado no mysql
-   $comando = $conexao->prepare($SQL);
+$sql = "SELECT * FROM noticia"; 
 
+$comando = $conexao->prepare($sql);
 
-   //executa o comando
-   $comando->execute();
+$comando->execute();
 
-   //pegar os resultados da consulta - todas as linhas de resultados
-   $resultados = $comando->get_result();
+$resultado = $comando->get_result();
 
-   //pega a primeira linha de resultado da consulta
-   $noticias = [];
-   while ($noticia = $resultados->fetch_object()){
-      $noticias[] = $noticia;
-   }
-   
-
-
-   
-
-
-
-
-
-
-
+$noticias = [];
+while ($noticia = $resultado->fetch_object()){
+    $noticias[] = $noticia; }

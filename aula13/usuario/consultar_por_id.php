@@ -1,39 +1,20 @@
 <?php
-   
-   //importa o arquivo de conexão
-   require_once "../banco/conexao.php";
+require_once "../banco/conexao.php";
 
-   //verifica se foi enviada o param id pela URL
-   if(isset($_GET['id'])){
+if(isset($_GET["id"])){
 
-   $id = $_GET['id'];
+$id = $_GET["id"];
 
-   //cria uma variável com um comando SQL
-   $SQL = "SELECT * FROM `usuario` WHERE  `idusuario`= ? ;";
- 
-   //prepara o comando para ser executado no mysql
-   $comando = $conexao->prepare($SQL);
+$sql = "SELECT * FROM `usuario` WHERE  `idusuario`= ?;"; 
 
-   //diz qual valor vai ser colocado no lugar do ?
-   $comando->bind_param("i", $id);
+$comando = $conexao->prepare($sql);
 
-   //executa o comando
-   $comando->execute();
+$comando->bind_param("i", $id); 
 
-   //pegar os resultados da consulta - todas as linhas de resultados
-   $resultados = $comando->get_result();
+$comando->execute();
 
-   //pega a primeira linha de resultado da consulta
-   $usuario = $resultados->fetch_object();
+$resultado = $comando->get_result();
 
-   
+$usuario = $resultado->fetch_object();
 
-}   
-   
-
-
-
-
-
-
-
+}
