@@ -12,6 +12,7 @@
     
     <div class="text-end">
     <a href="formulario.php" class="btn btn-success" >Cadastrar Novo</a>
+</div>
     <table class="table" id="tabela_dados">
   <thead>
     <tr>
@@ -19,17 +20,21 @@
       <th scope="col">Ano Nascimento</th>
       <th scope="col">Signo</th>
       <th scope="col">Sexo</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Acões</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach($atores as $ator): ?>
     <tr>
-      <td><?php echo $ator->ator ?></td>
       <td><?php echo $ator->nome ?></td>
-      <td><img src="../uploads/<?php echo $ator->ano_nascimento ?>" height="25px"></td>
+      <td><?php echo $ator->anonascimento ?></td>
+      <td><?php echo $ator->signo ?></td>
+      <td><?php echo $ator->sexo ?></td>
+      <td><img src="../uploads/<?php echo $ator->foto ?>" height="25px"></td>
       <td class="text-end" width="25%">
-        <a href="excluir.php?id=<?= $ator->idatores?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Excluir</a>
-        <a href="formulario.php?id=<?= $ator->idatores?>" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+        <a href="excluir.php?id=<?= $ator->idator?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Excluir</a>
+        <a href="formulario.php?id=<?= $ator->idator?>" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
       </td>
     </tr>
     <?php endforeach; ?>

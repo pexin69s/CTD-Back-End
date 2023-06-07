@@ -17,13 +17,22 @@
         <input class= "form-control" type="text" name="nome" id="nome" value="<?php echo $ator->nome ?? "" ;?>"><br>
 
         <label class="form-label">Ano Nascimento</label><br>
-        <textarea class= "form-control"  name="anonascimento" id="anonascimento" ><?php echo $ator->anonascimento ?? "" ;?></textarea><br>
+        <input class= "form-control" type="text" name="anonascimento" id="anonascimento" value="<?php echo $ator->anonascimento ?? "" ;?>"><br>
 
         <label class="form-label">Signo</label><br>
         <input class= "form-control" type="text" name="signo" id="signo" value="<?php echo $ator->signo ?? "" ;?>"><br>
 
         <label class="form-label">Sexo</label><br>
-        <input class= "form-control" type="file" name="sexo" id="sexo" value="<?php echo $ator->sexo ?? "" ;?>"><br>
+     
+        <select class="form-select" aria-label="Default select example" name="sexo" id="sexo">
+        <option selected>Sexo</option>
+        <option value="M"    <?php echo isset($ator->sexo) ?  ($ator->sexo=="M") ? "selected":"": "" ;?>>Masculino</option>
+        <option value="F" <?php isset($ator->sexo) ?  ($ator->sexo=="F") ? "selected":"": "" ;?>>Feminino</option>
+
+        </select>
+
+        <label class="form-label">Foto</label><br>
+        <input class= "form-control" type="file" name="foto" id="foto" value="<?php echo $ator->foto ?? "" ;?>"><br>
 
         <button type="submit" class="btn btn-dark" >Inserir</button>
     </form>
