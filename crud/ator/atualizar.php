@@ -7,11 +7,11 @@ $anonascimento = $_POST['anonascimento'];
 $signo = $_POST['signo'];
 $sexo = $_POST['sexo'];
 
-$sql = "UPDATE `ator` SET `nome`=?, `anonascimento`=?, `signo`=?, `sexo`=?, WHERE  `idator`=?;";
+$SQL = "UPDATE `ator` SET `nome`=?, `anonascimento`=?, `signo`=?, `sexo`=?, WHERE  `idator`=?;";
 
-echo $sql;
+echo $SQL;
 
-$comando = $conexao->prepare($sql);
+$comando = $conexao->prepare($SQL);
 
 $comando->bind_param("ssssi", $nome , $anonascimento , $signo, $sexo , $id); 
 

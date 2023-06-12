@@ -2,9 +2,9 @@
 require_once "../banco/conexao.php";
 
 
-$sql = "SELECT * FROM ator"; 
+$SQL = "SELECT * FROM ator"; 
 
-$comando = $conexao->prepare($sql);
+$comando = $conexao->prepare($SQL);
 
 $comando->execute();
 

@@ -2,9 +2,9 @@
 require_once "../banco/conexao.php";
 
 
-$sql = "SELECT distinct nome FROM ator"; 
+$SQL = "SELECT distinct 'ator' FROM idator"; 
 
-$comando = $conexao->prepare($sql);
+$comando = $conexao->prepare($SQL);
 
 $comando->execute();
 

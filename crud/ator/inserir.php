@@ -14,11 +14,11 @@ $sexo = $_POST["sexo"];
 $foto = $nome_foto;
 
 
-$sql = "INSERT INTO `ator` (`nome`, `anonascimento`, `signo`, `sexo`, foto) VALUES (?, ?, ?, ?, ?);";
+$SQL = "INSERT INTO `ator` (`nome`, `anonascimento`, `signo`, `sexo`, foto) VALUES (?, ?, ?, ?, ?);";
 
 
 //
-$comando = $conexao->prepare($sql);
+$comando = $conexao->prepare($SQL);
 
 //Faz vinculação dos parâmetros
 $comando->bind_param("sssss", $nome , $anonascimento , $signo, $sexo, $foto); 

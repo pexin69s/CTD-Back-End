@@ -3,12 +3,12 @@ require_once "../banco/conexao.php";
 
 $id = $_GET["id"];
 
-$sql = "DELETE FROM `ator` WHERE  `ator`= ? ;"; 
+$SQL = "DELETE FROM `ator` WHERE  `idator`= ? ;"; 
 
 $comando = $conexao->prepare($SQL);
 
 $comando->bind_param("i", $id); 
 
-$comando->execute();
+$comando->execute();    
 
 header('location: index.php');

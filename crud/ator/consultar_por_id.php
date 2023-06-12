@@ -5,9 +5,9 @@ if(isset($_GET["id"])){
 
 $id = $_GET["id"];
 
-$sql = "SELECT * FROM `ator` WHERE  `idator`= ?;"; 
+$SQL = "SELECT * FROM `ator` WHERE  `idator`= ?;"; 
 
-$comando = $conexao->prepare($sql);
+$comando = $conexao->prepare($SQL);
 
 $comando->bind_param("i", $id); 
 
