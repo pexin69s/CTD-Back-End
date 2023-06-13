@@ -1,7 +1,7 @@
 <hr>
 <!-- Rodape-->
 <footer class="bg-dark p-3 text-white text=center">
-  Meu site de atores @ 2023 Mano Pexin
+  Meu site de Filmes @ 2023 Nicoly Jully Cocentino
     </footer>
 <!--Final do rodape-->
 

@@ -2,7 +2,7 @@
         require_once "../banco/conexao.php";
 
 
-    $SQL = "SELECT distinct 'ator' FROM idator"; 
+    $SQL = "SELECT distinct 'filme' FROM idfilme"; 
 
     $comando = $conexao->prepare($SQL);
 
@@ -10,8 +10,8 @@
 
     $resultado = $comando->get_result();
 
-    $nomes = [];
-        while ($ator = $resultado->fetch_object()){
-    $nomes [] = $ator; }
+    $titulos = [];
+        while ($filme = $resultado->fetch_object()){
+    $titulos [] = $filme; }
 
 ?>

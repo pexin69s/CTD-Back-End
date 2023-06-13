@@ -11,7 +11,7 @@
     <form action="<?php echo isset($ator) ? "atualizar.php" : "inserir.php"; ?>" method="post" method="post" enctype="multipart/form-data">
     
 
-        <input type="hidden" name="idusuario" id="n1" value="<?php echo $ator->idator ?? "" ;?>"><br>  
+        <input type="hidden" name="idator" id="n1" value="<?php echo $ator->idator ?? "" ;?>"><br>  
 
         <label class="form-label">Nome</label><br>
         <input class= "form-control" type="text" name="nome" id="nome" value="<?php echo $ator->nome ?? "" ;?>"><br>
