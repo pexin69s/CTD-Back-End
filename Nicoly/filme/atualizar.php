@@ -9,13 +9,13 @@ require_once "faz_upload.php";
     $anolancamento = $_POST['anolancamento'];
     $diretor = $_POST['diretor'];
 
-    $SQL = "UPDATE `filme` SET `titulo`=?, `sinopse`=?, `anolancamento`=?, `diretor`=?, WHERE  `idfilme`=?;";
+    $SQL = "UPDATE `filme` SET `titulo`=?, `sinopse`=?, `anolancamento`=?, `diretor`=? WHERE  `idfilme`=?;";
 
 echo $SQL;
 
     $comando = $conexao->prepare($SQL);
 
-    $comando->bind_param("ssssi", $titulo , $sinopse , $anolancamento , $diretor , $idfilme); 
+    $comando->bind_param("ssssi", $titulo , $sinopse , $anolancamento , $diretor , $id); 
 
     $comando->execute();
 

@@ -8,13 +8,13 @@ require_once "faz_upload.php";
     $signo = $_POST['signo'];
     $sexo = $_POST['sexo'];
 
-    $SQL = "UPDATE `ator` SET `nome`=?, `anonascimento`=?, `signo`=?, `sexo`=?, WHERE  `idator`=?;";
+    $SQL = "UPDATE `ator` SET `nome`=?, `anonascimento`=?, `signo`=?, `sexo`=? WHERE `idator`=?;";
 
 echo $SQL;
 
     $comando = $conexao->prepare($SQL);
 
-    $comando->bind_param("ssssi", $nome , $anonascimento , $signo , $sexo , $idator); 
+    $comando->bind_param("ssssi", $nome , $anonascimento , $signo , $sexo , $id); 
 
     $comando->execute();
 
