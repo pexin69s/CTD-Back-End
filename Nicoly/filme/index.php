@@ -31,7 +31,7 @@
       <td><?php echo $filme->sinopse ?></td>
       <td><?php echo $filme->anolancamento ?></td>
       <td><?php echo $filme->diretor ?></td>
-      <td><img src="../uploads/<?php $filme->foto ?>" height="25px"></td>
+      <td><img src="../uploads/<?php echo $filme->foto ?>" height="25px"></td>
       <td class="text-end" width="25%">
         <a href="excluir.php?id=<?= $filme->idfilme?>" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> Excluir</a>
         <a href="formulario.php?id=<?= $filme->idfilme?>" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Editar</a>

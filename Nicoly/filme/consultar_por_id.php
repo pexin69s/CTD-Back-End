@@ -15,6 +15,6 @@ $comando->execute();
 
 $resultado = $comando->get_result();
 
-$ator = $resultado->fetch_object();
+$filme = $resultado->fetch_object();
 
 }
